@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-        double q, k;
-        long qRound;
+        double q;
+        int qRound, k;
         System.out.println("Input n:");
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());
@@ -13,7 +13,7 @@ public class Main {
         //Генерация N случайных чисел.
         Random random = new Random();
         for (int i = 0; i < n; i++)
-            arr[i] = random.nextInt(100) - 50;
+            arr[i] = random.nextInt(1000) - 500;
 
         //Для каждого числа k вычислить квадратный корень q.
         // Если квадрат целой части q числа равен k, то вывести это число на экран.
@@ -31,8 +31,8 @@ public class Main {
 
             }
             q = Math.sqrt(k);
-            qRound = Math.round(Math.sqrt(k));
-            if (k == qRound * qRound) {
+            qRound = (int)Math.round(Math.sqrt(k));
+            if (k == (qRound * qRound)) {
                 System.out.println("k = " + k + ", q = " + q);
             }
         }
